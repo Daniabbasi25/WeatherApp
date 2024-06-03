@@ -5,7 +5,7 @@ const LinerEnd='#2FC1E7'
 // more colors from theme
 export default {
 	background: {
-		screenBackgroundLinear:[Linerstart,LinerEnd]
+		screenBackgroundLinear:[Linerstart,LinerEnd,Linerstart]
 	},
 	text:{
 		primary:WHITE
