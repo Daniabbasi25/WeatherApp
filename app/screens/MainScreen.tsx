@@ -11,7 +11,10 @@ const MainScreen = () => {
     <LinearGradient
       // Background Linear Gradient
       colors={theme.background.screenBackgroundLinear}
-      style={styles.screenContainer} >
+      style={styles.screenContainer}
+      start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+      >
         <MainWeather />
 
     </LinearGradient>
