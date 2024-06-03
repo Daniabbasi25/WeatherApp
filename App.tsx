@@ -4,9 +4,9 @@ import { MainScreen } from 'screens'
 
 const App = () => {
   return (
-    <SafeAreaView style={{flex:1}}>
+
      <MainScreen />
-    </SafeAreaView>
+   
   )
 }
 

@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { AppliedTheme } from 'themes'
 import { LinearGradient } from 'expo-linear-gradient';
-import { MainWeather } from 'components';
+import { MainWeather, TodaysTemp, WindAndTemp } from 'components';
 
 
 const theme=AppliedTheme()
@@ -11,11 +11,18 @@ const MainScreen = () => {
     <LinearGradient
       // Background Linear Gradient
       colors={theme.background.screenBackgroundLinear}
-      style={styles.screenContainer}
+style={{flex:1}}
       start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
+        <ScrollView
+        contentContainerStyle={styles.screenContainer}
+        >
+
         <MainWeather />
+        <WindAndTemp />
+        <TodaysTemp />
+        </ScrollView>
 
     </LinearGradient>
   )
