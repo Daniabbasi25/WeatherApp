@@ -7,7 +7,8 @@ const initialState: MainState = {
     isLoading: false,
     errorMessage: '',
     weather:undefined,
-    theme:'Light'
+    theme:'Light',
+    unit:'C'
     
   };
   

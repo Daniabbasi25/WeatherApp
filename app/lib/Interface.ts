@@ -7,7 +7,8 @@ export interface RootState {
 export interface MainState{
     isLoading: boolean; errorMessage: string; 
     weather?:WeatherData,
-    theme:'Dark'|'Light'
+    theme:'Dark'|'Light',
+    unit:'C'|'F'
 }
 
 

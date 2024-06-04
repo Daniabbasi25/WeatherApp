@@ -54,11 +54,18 @@ const getFontSize = (size: number): number => {
 	return size;
 };
 
+const celsiusToFahrenheit = (celsius: number|undefined): number => {
+	// Formula to convert Celsius to Fahrenheit: F = (C * 9/5) + 32
+	const fahrenheit: number = (celsius??0 * 9/5) + 32;
+	return fahrenheit;
+  };
+
+
 export {
 	getWidth,
 	getHeight,
 	isIos,
 	getFontSize,
-
+	celsiusToFahrenheit
 	 
 };

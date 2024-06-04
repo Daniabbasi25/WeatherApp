@@ -1,17 +1,20 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { images } from 'assets'
-import { getFontSize, getHeight, getWidth } from 'lib'
+import { celsiusToFahrenheit, getFontSize, getHeight, getWidth } from 'lib'
 import { AppliedTheme } from 'themes'
 import { useReduxSelector } from 'store'
 
 const theme=AppliedTheme();
 const MainWeather = () => {
-  const  {weather,theme}=useReduxSelector(state=>state.Main)
+  const  {weather,theme,unit}=useReduxSelector(state=>state.Main)
+  
   return (
     <View>
       <Image source={theme==='Dark'? images.cloudRain :images.sun}  style={styles.mainImage}/>
-      <Text style={styles.heading}>{weather?.current.temp_c}&#176;C</Text>
+      <Text style={styles.heading}>
+         
+        {unit==='C'? weather?.current.temp_c: celsiusToFahrenheit(weather?.current.temp_c)}&#176;{unit}</Text>
       <Text style={styles.subText}>{weather?.current.condition.text}</Text>
     </View>
   )
