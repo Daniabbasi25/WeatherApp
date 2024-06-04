@@ -14,7 +14,7 @@ const MainWeather = () => {
       <Image source={theme==='Dark'? images.cloudRain :images.sun}  style={styles.mainImage}/>
       <Text style={styles.heading}>
          
-        {unit==='C'? weather?.current.temp_c: celsiusToFahrenheit(weather?.current.temp_c)}&#176;{unit}</Text>
+        {unit==='C'? weather?.current.temp_c : celsiusToFahrenheit(weather?.current.temp_c)}&#176;{unit}</Text>
       <Text style={styles.subText}>{weather?.current.condition.text}</Text>
     </View>
   )

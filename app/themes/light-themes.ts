@@ -7,7 +7,8 @@ export default {
 	background: {
 		screenBackgroundLinear:[Linerstart,LinerEnd,Linerstart],
 		containerBackground:'#288AC2',
-		errorBackGround:Linerstart
+		errorBackGround:Linerstart,
+		activeButton:Linerstart
 	},
 	text:{
 		primary:WHITE

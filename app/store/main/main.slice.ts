@@ -26,6 +26,9 @@ setWeatherStates:(state,action) => {
     state.theme='Dark'
   }
 },
+setunit:(state,action) => {
+   state.unit=action.payload
+},
   },
   extraReducers,
 });
@@ -38,5 +41,5 @@ export const useUserSelector = buildSubStateSelector<UserAppState>(
   
   export const userActions = userSlice.actions;
   export const mainReducer = userSlice.reducer;
-  export const {setWeatherStates } = userSlice.actions; // Update the action name here
+  export const {setWeatherStates,setunit } = userSlice.actions; // Update the action name here
   export default mainReducer;

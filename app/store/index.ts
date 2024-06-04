@@ -26,7 +26,7 @@ if (__DEV__) {
 const persistConfig: any = {
   key: "root",
   storage: AsyncStorage,
-  version: "1",
+  version: "2",
   //@ts-ignore
   migrate: (state) => {
     return Promise.resolve(state);
