@@ -1,13 +1,12 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {buildSubStateSelector} from '../config/subSelector';
-import {User, UserState} from '@model';
-import extraReducers from './user.reducers'; 
+import {MainState} from 'lib';
+import extraReducers from './main.reducers'; 
 
-const initialState: UserState = {
+const initialState: MainState = {
     isLoading: false,
     errorMessage: '',
-    user: {} as User,
-    isLogin: false,
+    weather:undefined,
     
   };
   
@@ -16,23 +15,23 @@ const initialState: UserState = {
 
  
 export const userSlice = createSlice({
-  name: 'user',
+  name: 'main',
   initialState,
   reducers: { 
-    logOut:(state)=>{
-      state.isLogin=false
-    }
+setWeather:(state,action) => {
+  state.weather=action.payload
+},
   },
   extraReducers,
 });
 
 export const useUserSelector = buildSubStateSelector<UserAppState>(
-    state => state.user,
+    state => state.MainState,
   );
   
-  export * from './user.actions';
+  export * from './main.actions';
   
   export const userActions = userSlice.actions;
-  export const userReducers = userSlice.reducer;
-  export const { logOut} = userSlice.actions; // Update the action name here
-  export default userReducers;
+  export const mainReducer = userSlice.reducer;
+  export const { } = userSlice.actions; // Update the action name here
+  export default mainReducer;

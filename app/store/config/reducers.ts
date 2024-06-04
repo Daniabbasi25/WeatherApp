@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import { userReducers } from '../user/user.slice'
+import { mainReducer } from '../main/main.slice'
 
  
 export const rootReducer = combineReducers({
-  User: userReducers,
+  Main: mainReducer,
 
 });

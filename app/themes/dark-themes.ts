@@ -7,7 +7,8 @@ const LinerEnd='#1047B0'
 export default {
 	background: {
 		screenBackgroundLinear:[Linerstart,LinerEnd,Linerstart],
-		containerBackground:'#0C3989'
+		containerBackground:'#0C3989',
+		errorBackGround:Linerstart
 	},
 	text:{
 		primary:WHITE

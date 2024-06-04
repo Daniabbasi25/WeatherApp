@@ -1,4 +1,4 @@
-import { RootState } from "@model";
+import { RootState } from "lib";
 import { useSelector } from "react-redux";
 
 export const useAppStateSelector = <TSelected>(

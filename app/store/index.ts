@@ -53,7 +53,7 @@ const store = configureStore({
 export type AppDispatch = typeof store.dispatch;
 export const useReduxDispatch = (): AppDispatch => useDispatch<AppDispatch>();
 export const useReduxSelector: TypedUseSelectorHook<RootState> = useSelector;
-export * from "./user";
+export * from "./main";
 
 
 const persistor = persistStore(store);

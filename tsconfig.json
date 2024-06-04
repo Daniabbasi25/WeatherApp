@@ -20,14 +20,14 @@
 			"config": [
 				"config"
 			],
-			"hooks": [
-				"hooks"
-			],
 			"theme": [
 				"theme"
 			],
 			"assets": [
 				"assets"
+			],
+			"hooks": [
+				"hooks"
 			],
 		}
 	}
