@@ -24,6 +24,6 @@
 ## Screenshots:
 ![SS of Theme 1](https://github.com/Daniabbasi25/WeatherApp/assets/150645688/8998d7c3-1366-43cd-a20f-24a2c0e4b553)
 
-![Screenshot 1]
-![Screenshot 2] (https://github.com/Daniabbasi25/WeatherApp/assets/150645688/83b08e7f-ab8e-4943-ae4d-0c2f1d822437)
+
+![SS of Theme 2](https://github.com/Daniabbasi25/WeatherApp/assets/150645688/83b08e7f-ab8e-4943-ae4d-0c2f1d822437)
 
