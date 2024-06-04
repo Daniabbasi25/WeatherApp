@@ -3,14 +3,16 @@ import React from 'react'
 import { images } from 'assets'
 import { getFontSize, getHeight, getWidth } from 'lib'
 import { AppliedTheme } from 'themes'
+import { useReduxSelector } from 'store'
 
 const theme=AppliedTheme();
 const MainWeather = () => {
+  const  weather=useReduxSelector(state=>state.Main.weather)
   return (
     <View>
       <Image source={images.cloudRain}  style={styles.mainImage}/>
-      <Text style={styles.heading}>20</Text>
-      <Text style={styles.subText}>sub Text</Text>
+      <Text style={styles.heading}>{weather?.current.temp_c}</Text>
+      <Text style={styles.subText}>{weather?.current.condition.text}</Text>
     </View>
   )
 }

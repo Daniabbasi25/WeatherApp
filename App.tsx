@@ -1,26 +1,31 @@
-import { SafeAreaView, StyleSheet } from 'react-native'
+
 import React from 'react'
-import { MainScreen,ErrorScreen } from 'screens'
-import { useGeolocation, useWeather } from 'hooks';
+import { MainScreen } from 'screens'
+
+import { Provider } from 'react-redux';
+import { persistor, store } from 'store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { StatusBar } from 'expo-status-bar';
+import { AppliedTheme } from 'themes';
 
 const App = () => {
-  const { latitude, longitude, errorMsg } = useGeolocation();
-  const {  errorMsg: weatherErrorMsg,weather } = useWeather(latitude, longitude);
+  const theme=AppliedTheme()
 
-if(errorMsg){
 
   return (
-    <ErrorScreen errorMsg={errorMsg} />
-  )
-}
+<Provider store={store}>
+			<PersistGate loading={null} persistor={persistor}>
+		  <MainScreen />
+			</PersistGate>
 
-  return (
+			<StatusBar backgroundColor={theme.background.containerBackground} />
 
-     <MainScreen />
+		</Provider>
+    
    
   )
+
 }
 
 export default App
 
-const styles = StyleSheet.create({})

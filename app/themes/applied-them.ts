@@ -1,8 +1,14 @@
 import * as lightTheme from './light-themes';
 import * as darkTheme from './dark-themes';
+import { store, useReduxSelector } from 'store';
 const AppliedTheme = () => {
-	
-	// return lightTheme.default;
-	return darkTheme.default;
+	const theme=store.getState().Main.theme;
+
+	if(theme==='Dark'){
+
+		return darkTheme.default;
+	}
+	return lightTheme.default;
+
 };
 export default AppliedTheme;

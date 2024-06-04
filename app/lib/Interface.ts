@@ -6,7 +6,8 @@ export interface RootState {
 
 export interface MainState{
     isLoading: boolean; errorMessage: string; 
-    weather?:WeatherData
+    weather?:WeatherData,
+    theme:'Dark'|'Light'
 }
 
 

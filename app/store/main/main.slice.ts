@@ -7,6 +7,7 @@ const initialState: MainState = {
     isLoading: false,
     errorMessage: '',
     weather:undefined,
+    theme:'Light'
     
   };
   
@@ -18,8 +19,11 @@ export const userSlice = createSlice({
   name: 'main',
   initialState,
   reducers: { 
-setWeather:(state,action) => {
+setWeatherStates:(state,action) => {
   state.weather=action.payload
+  if(action.payload?.current.temp_c<15){
+    state.theme='Dark'
+  }
 },
   },
   extraReducers,
@@ -33,5 +37,5 @@ export const useUserSelector = buildSubStateSelector<UserAppState>(
   
   export const userActions = userSlice.actions;
   export const mainReducer = userSlice.reducer;
-  export const { } = userSlice.actions; // Update the action name here
+  export const {setWeatherStates } = userSlice.actions; // Update the action name here
   export default mainReducer;

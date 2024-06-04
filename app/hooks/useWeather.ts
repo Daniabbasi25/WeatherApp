@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { setWeatherStates, useReduxDispatch } from 'store';
 
 interface WeatherData {
   weather?:WeatherData
@@ -11,7 +12,7 @@ const useWeather = (latitude: number, longitude: number): WeatherData => {
    weather:undefined,
     errorMsg: null,
   });
-
+const dispatch=useReduxDispatch()
   useEffect(() => {
     const fetchWeather = async () => {
       try {
@@ -20,7 +21,7 @@ const useWeather = (latitude: number, longitude: number): WeatherData => {
         const response = await axios.get(
           `https://api.weatherapi.com/v1/current.json?q=${latitude},${longitude}&key=${apiKey}`
         );
-
+        dispatch(setWeatherStates(response.data))
      
         setWeather({
           weather:response.data,
