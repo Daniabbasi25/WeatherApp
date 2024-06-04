@@ -6,8 +6,8 @@ import { getFontSize, getWidth } from 'lib'
 import { setunit, useReduxDispatch, useReduxSelector } from 'store'
 
 
-const theme=AppliedTheme()
 const Header = () => {
+    const theme=AppliedTheme()
 
     const { weather:data,unit }=useReduxSelector(state=>state.Main)
     const dispatch=useReduxDispatch()
@@ -45,7 +45,7 @@ F
 }
 
 export default Header
-
+const theme=AppliedTheme()
 const styles = StyleSheet.create({
 
     today:{

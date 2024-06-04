@@ -4,7 +4,7 @@ import {MainState} from 'lib';
 import extraReducers from './main.reducers'; 
 
 const initialState: MainState = {
-    isLoading: false,
+    isLoading: true,
     errorMessage: '',
     weather:undefined,
     theme:'Light',
@@ -25,9 +25,13 @@ setWeatherStates:(state,action) => {
   if(action.payload?.current.temp_c<15){
     state.theme='Dark'
   }
+  state.isLoading=false
 },
 setunit:(state,action) => {
    state.unit=action.payload
+},
+startloading:(state) => {
+   state.isLoading=true
 },
   },
   extraReducers,
@@ -41,5 +45,5 @@ export const useUserSelector = buildSubStateSelector<UserAppState>(
   
   export const userActions = userSlice.actions;
   export const mainReducer = userSlice.reducer;
-  export const {setWeatherStates,setunit } = userSlice.actions; // Update the action name here
+  export const {setWeatherStates,setunit,startloading } = userSlice.actions; // Update the action name here
   export default mainReducer;

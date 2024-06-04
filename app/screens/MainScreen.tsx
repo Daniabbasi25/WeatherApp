@@ -1,16 +1,19 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
+import React, { Fragment } from 'react'
 import { AppliedTheme } from 'themes'
 import { LinearGradient } from 'expo-linear-gradient';
 import { Header, MainWeather, DetailedComponent, WindAndTemp } from 'components';
 import { useGeolocation, useWeather } from 'hooks';
 import ErrorScreen from './ErrorScreen';
+import { useReduxSelector } from 'store';
+import { getWidth } from 'lib';
 
 
 const MainScreen = () => {
   const theme=AppliedTheme()
   const { latitude, longitude, errorMsg } = useGeolocation();
   const {  errorMsg: weatherErrorMsg,weather } = useWeather(latitude, longitude);
+  const {isLoading,weather: weatherRedux}=useReduxSelector(state=>state.Main)
 if(errorMsg){
 
   return (
@@ -32,10 +35,20 @@ style={{flex:1}}
         <ScrollView
         contentContainerStyle={styles.screenContainer}
         >
+          {
+            isLoading && weather!==undefined ? 
+            <ActivityIndicator  size={getWidth(40)}/> :
+            <Fragment>
+              {
+                isLoading && <ActivityIndicator  size={getWidth(40)}/> 
+              }
         <MainWeather />
 <Header />
 
         <DetailedComponent />
+            </Fragment>
+          }
+
         </ScrollView>
         </SafeAreaView>
     </LinearGradient>
