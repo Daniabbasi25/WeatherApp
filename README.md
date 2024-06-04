@@ -19,3 +19,9 @@
 
 ### 6. Temperature Unit Conversion:
 - The app provides the option to switch between Celsius and Fahrenheit temperature units, catering to the preferences of diverse user bases.
+
+
+## Screenshots:
+
+![Screenshot 1](https://example.com/screenshot1.png)
+![Screenshot 2](https://example.com/screenshot2.png)
