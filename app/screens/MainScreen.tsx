@@ -2,7 +2,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { AppliedTheme } from 'themes'
 import { LinearGradient } from 'expo-linear-gradient';
-import { Header, MainWeather, TodaysTemp, WindAndTemp } from 'components';
+import { Header, MainWeather, DetailedComponent, WindAndTemp } from 'components';
 import { useGeolocation, useWeather } from 'hooks';
 import ErrorScreen from './ErrorScreen';
 
@@ -34,8 +34,8 @@ style={{flex:1}}
         >
         <MainWeather />
 <Header />
-        <WindAndTemp />
-        <TodaysTemp />
+
+        <DetailedComponent />
         </ScrollView>
         </SafeAreaView>
     </LinearGradient>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   screenContainer:{
     flex:1,
     alignItems:'center',
-    // justifyContent:'center'
+    justifyContent:'center'
 
   }
 })
