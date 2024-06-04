@@ -7,11 +7,11 @@ import { useReduxSelector } from 'store'
 
 const theme=AppliedTheme();
 const MainWeather = () => {
-  const  weather=useReduxSelector(state=>state.Main.weather)
+  const  {weather,theme}=useReduxSelector(state=>state.Main)
   return (
     <View>
-      <Image source={images.cloudRain}  style={styles.mainImage}/>
-      <Text style={styles.heading}>{weather?.current.temp_c}</Text>
+      <Image source={theme==='Dark'? images.cloudRain :images.sun}  style={styles.mainImage}/>
+      <Text style={styles.heading}>{weather?.current.temp_c}&#176;C</Text>
       <Text style={styles.subText}>{weather?.current.condition.text}</Text>
     </View>
   )
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   subText:{
     color:theme.text.primary,
-    fontSize:getFontSize(12),
+    fontSize:getFontSize(16),
     fontWeight:'400',
     textAlign:'center',
 
